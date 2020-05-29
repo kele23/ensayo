@@ -2,5 +2,4 @@
 <workspaceFilter version="1.0">
     <filter root="/content/ensayo"/>
     <filter root="/content/dam/ensayo"/>
-    <filter root="/content/experience-fragments/ensayo"/>
 </workspaceFilter>
