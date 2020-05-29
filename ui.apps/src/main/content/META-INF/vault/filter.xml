@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/ensayo">
+        <exclude pattern="/apps/ensayo/components/canvas"/>
+    </filter>
+    <filter root="/etc/designs/ensayo">
+        <exclude pattern="/etc/designs/ensayo/canvas"/>
+    </filter>
+</workspaceFilter>

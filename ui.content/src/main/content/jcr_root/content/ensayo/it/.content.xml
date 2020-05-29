@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        cq:lastModified="{Date}2020-05-28T16:04:40.598Z"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ensayo/templates/page-home"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Italiano"
+        sling:resourceType="ensayo/components/structure/pages/page"
+        isHomepage="{Boolean}true"
+        pageTitle="Ensayo | The Site"
+        twitterCard="summary">
+        <root
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="ensayo/components/wcm/responsivegrid">
+            <navigation
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ensayo/components/structure/internal/navigation"/>
+            <responsivegrid
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ensayo/components/wcm/responsivegrid">
+                <hero
+                    jcr:created="{Date}2020-05-28T15:14:34.740Z"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2020-05-28T15:23:01.999Z"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ensayo/components/content/hero"
+                    image="/content/dam/ensayo/hero.png"
+                    subtitle="Sub-hero message, not too long and not too short. Make it just right!"
+                    title="Main Hero Message to sell yourself!"
+                    topText="What business are you?"/>
+                <boxes
+                    jcr:created="{Date}2020-05-28T15:27:54.434Z"
+                    jcr:createdBy="admin"
+                    jcr:lastModified="{Date}2020-05-28T16:04:40.595Z"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="ensayo/components/content/boxes"
+                    title="Title">
+                    <boxes jcr:primaryType="nt:unstructured">
+                        <item0
+                            jcr:primaryType="nt:unstructured"
+                            image="/content/dam/ensayo/tailwindcss.svg"
+                            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula."
+                            title="Lorem ipsum dolor sit amet"/>
+                        <item1
+                            jcr:primaryType="nt:unstructured"
+                            image="/content/dam/ensayo/modern-design.svg"
+                            text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at ipsum eu nunc commodo posuere et sit amet ligula."
+                            title="Lorem ipsum dolor sit amet"/>
+                    </boxes>
+                </boxes>
+            </responsivegrid>
+            <footer
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="ensayo/components/structure/internal/footer"/>
+        </root>
+    </jcr:content>
+</jcr:root>

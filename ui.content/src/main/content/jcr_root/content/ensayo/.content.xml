@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/ensayo"
+        cq:deviceGroups="[/etc/mobile/groups/responsive]"
+        cq:lastModified="{Date}2020-05-28T14:21:09.828Z"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/ensayo/templates/page-site"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Ensayo Site"
+        sling:resourceType="ensayo/components/structure/pages/page-site"
+        isSitepage="{Boolean}true"
+        twitterCard="summary"/>
+    <it/>
+</jcr:root>
