@@ -1,17 +1,21 @@
 package it.ensayo.core.models;
 
 import org.apache.sling.api.resource.Resource;
+import org.apache.sling.models.annotations.Exporter;
 import org.apache.sling.models.annotations.Model;
 import org.apache.sling.models.annotations.injectorspecific.ChildResource;
 import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
+import org.apache.sling.models.annotations.injectorspecific.Self;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
-@Model(adaptables = Resource.class)
-public class PageModel {
+@Model(adaptables = Resource.class, resourceType = "ensayo/components/structure/pages/page")
+@Exporter(name = "jackson", extensions = "json")
+public class PageModel implements Component {
+
+    @Self
+    private Resource resource;
 
     @ValueMapValue(injectionStrategy = InjectionStrategy.OPTIONAL)
     private String pageTitle;
@@ -20,23 +24,10 @@ public class PageModel {
     private String title;
 
     @ChildResource(name = "root/responsivegrid")
-    private List<Resource> components;
+    private List<Component> components;
 
-    public List<ComponentModel> getComponents() {
-        List<ComponentModel> componentList = new ArrayList<>();
-        for (Resource resource : components){
-            String resourceType = resource.getResourceType();
-            String componentName = resourceType.substring(resourceType.lastIndexOf('/') + 1);
-            if (componentName.equals("hero")){
-                componentList.add(new HeroModel(resource));
-            }
-
-
-        }
-        return componentList;
-        //return components;
-
-        //return components.stream().map(Resource::getName).collect(Collectors.toList());
+    public List<Component> getComponents() {
+        return components;
     }
 
     public String getPageTitle() {
@@ -47,5 +38,8 @@ public class PageModel {
         return title;
     }
 
-
+    @Override
+    public Resource getResource() {
+        return resource;
+    }
 }

@@ -1,16 +1,16 @@
-package it.ensayo.core.api.configuration.impl;
+package it.ensayo.core.configuration.impl;
 
-import it.ensayo.core.api.configuration.TextfieldConfiguration;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.metatype.annotations.AttributeDefinition;
 import org.osgi.service.metatype.annotations.AttributeType;
 import org.osgi.service.metatype.annotations.Designate;
 import org.osgi.service.metatype.annotations.ObjectClassDefinition;
+import it.ensayo.core.configuration.BasicTextConfiguration;
 
-@Component(service = TextfieldConfiguration.class, immediate = true)
-@Designate(ocd = TextfieldConfigurationImpl.Configuration.class)
-public class TextfieldConfigurationImpl implements TextfieldConfiguration {
+@Component(service = BasicTextConfiguration.class, immediate = true)
+@Designate(ocd = BasicTextConfigurationImpl.Configuration.class)
+public class BasicTextConfigurationImpl implements BasicTextConfiguration {
 
     @Activate
     private void activate(Configuration configuration) {
@@ -24,9 +24,10 @@ public class TextfieldConfigurationImpl implements TextfieldConfiguration {
         return configuration.text();
     }
 
-    @ObjectClassDefinition(name = "Ensayo - get text",
-        description = "Ensayo - get text")
+    @ObjectClassDefinition(name = "Ensayo - Basic Conf",
+        description = "Ensayo - Basic Conf")
     public @interface Configuration {
+
         @AttributeDefinition(
             name = "Text",
             type = AttributeType.STRING

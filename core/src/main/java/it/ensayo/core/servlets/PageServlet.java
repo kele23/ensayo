@@ -6,8 +6,8 @@ import it.ensayo.core.utils.ResponseUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.resource.Resource;
-import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
+import org.jetbrains.annotations.NotNull;
 import org.osgi.service.component.annotations.Component;
 
 import javax.servlet.Servlet;
@@ -29,14 +29,10 @@ import static org.apache.sling.api.servlets.ServletResolverConstants.*;
 public class PageServlet extends SlingSafeMethodsServlet {
 
     @Override
-    protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws ServletException, IOException {
-        ResourceResolver resourceResolver = request.getResourceResolver();
+    protected void doGet(SlingHttpServletRequest request, @NotNull SlingHttpServletResponse response) throws ServletException, IOException {
         Resource resource = request.getResource();
         PageModel pageModel = resource.adaptTo(PageModel.class);
         ObjectMapper objectMapper = new ObjectMapper();
-        String s = objectMapper.writeValueAsString(pageModel);
-        ResponseUtils.writeJSONResponse(response, 200, s);
-
-
+        ResponseUtils.writeJSONResponse(response, 200, objectMapper.writeValueAsString(pageModel));
     }
 }

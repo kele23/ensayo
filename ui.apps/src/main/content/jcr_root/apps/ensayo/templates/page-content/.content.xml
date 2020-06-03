@@ -7,7 +7,7 @@
           allowedParents="[/apps/ensayo/templates/page-home,/apps/ensayo/templates/page-content]"
           ranking="{Long}100">
     <jcr:content jcr:primaryType="cq:PageContent"
-                 sling:resourceType="ensayo/components/structure/page-content">
+                 sling:resourceType="ensayo/components/structure/pages/page-content">
 
         <root jcr:primaryType="nt:unstructured">
 
