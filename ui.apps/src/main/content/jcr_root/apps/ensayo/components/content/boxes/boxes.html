@@ -1,4 +1,5 @@
-<section class="bg-white border-b py-8" data-sly-use.boxes="it.ensayo.core.models.BoxesModel">
+<section class="bg-white border-b py-8" data-sly-use.boxes="it.ensayo.core.models.BoxesModel"
+         data-sly-test="${properties.title}">
 
     <div class="container max-w-5xl mx-auto m-8">
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">${properties.title}</h1>
@@ -21,3 +22,8 @@
 
     </div>
 </section>
+
+
+<!--/*Placeholder*/-->
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"></sly>
+<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.title}"></sly>

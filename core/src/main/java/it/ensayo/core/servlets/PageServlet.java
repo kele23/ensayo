@@ -23,7 +23,6 @@ import static org.apache.sling.api.servlets.ServletResolverConstants.*;
         SLING_SERVLET_METHODS + "=GET",
         SLING_SERVLET_SELECTORS + "=export",
         SLING_SERVLET_EXTENSIONS + "=json",
-
     }
 )
 public class PageServlet extends SlingSafeMethodsServlet {
