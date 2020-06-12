@@ -29,6 +29,7 @@
                                             <title jcr:primaryType="nt:unstructured"
                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                                    fieldLabel="Title"
+                                                   required="{Boolean}true"
                                                    name="./title"/>
 
                                             <boxes jcr:primaryType="nt:unstructured"

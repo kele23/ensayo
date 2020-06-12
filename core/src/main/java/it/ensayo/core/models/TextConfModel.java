@@ -3,24 +3,30 @@ package it.ensayo.core.models;
 import it.ensayo.core.configuration.BasicTextConfiguration;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.injectorspecific.InjectionStrategy;
 import org.apache.sling.models.annotations.injectorspecific.OSGiService;
 import org.apache.sling.models.annotations.injectorspecific.Self;
 
 @Model(adaptables = SlingHttpServletRequest.class)
-public class TextfieldModel {
+public class TextConfModel {
 
     @Self
     private SlingHttpServletRequest slingHttpServletRequest;
 
-    @OSGiService
+    @OSGiService(injectionStrategy = InjectionStrategy.OPTIONAL)
     private BasicTextConfiguration basicTextConfiguration;
 
-    public String getText() {
+    public String getConfText() {
+        return basicTextConfiguration != null ? basicTextConfiguration.getText() : "No config";
+    }
+
+    public String getFilterText() {
         Object o = slingHttpServletRequest.getAttribute("ensayo-attribute");
         if (o instanceof String) {
-            return basicTextConfiguration.getText() + " " + o;
+            return (String) o;
         }
-        return basicTextConfiguration.getText();
+        return null;
     }
+
 
 }
